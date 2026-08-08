@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-charcoal bg-cream-50;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-charcoal-dark;
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-premium;
+  }
+  
+  .glassmorphism-dark {
+    @apply bg-charcoal-dark/70 backdrop-blur-md border border-white/10 shadow-premium;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-cream-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-cream-300 rounded-full hover:bg-cream-400 transition-colors;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimized CSS Animations for Background Particles */
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: var(--tw-opacity-base);
+  }
+  50% {
+    transform: translateY(-50px) translateX(15px) scale(1.1);
+    opacity: calc(var(--tw-opacity-base) * 1.5);
+  }
+}
+
+@keyframes floatFlake {
+  0% {
+    transform: translateY(0) rotate(var(--tw-rot-start)) scale(1);
+  }
+  50% {
+    transform: translateY(-80px) rotate(calc(var(--tw-rot-start) + 180deg)) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) rotate(calc(var(--tw-rot-start) + 360deg)) scale(1);
+  }
+}
+
+.animate-particle {
+  animation: floatParticle var(--tw-duration) ease-in-out infinite;
+  animation-delay: var(--tw-delay);
+}
+
+.animate-flake {
+  animation: floatFlake var(--tw-duration) ease-in-out infinite;
+  animation-delay: var(--tw-delay);
+}
