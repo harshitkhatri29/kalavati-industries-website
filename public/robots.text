@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kalavati-industries-website.vercel.app/sitemap.xml
